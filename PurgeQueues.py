@@ -19,7 +19,7 @@ winreg.CloseKey(rabbitMQServerHKey)
 sbinDir = glob(rabbitMQServerInstallDir[0] + '\\rabbitmq_server*' + '\\sbin\\')
 
 # RabbitMQ connection
-cl = Client('localhost:15672', username, password, timeout=100)
+cl = Client('localhost:15672', config.username, config.password, timeout=100)
 
 # Get queue names
 queues = [q['name'] for q in cl.get_queues()]
